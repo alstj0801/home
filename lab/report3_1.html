@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 프로그래밍</title>
+</head>
+<script>
+function pascals(new_row) {
+            var row = [];
+             if (new_row == 1) {
+                 row[0] = 1;
+                 document.write(row[0]);
+                 document.write("<div>");
+                 return row;
+             } else if (new_row == 2) {
+                 row[0] = 1;
+                 row[1] = 1;
+                 pascals(new_row - 1);
+             } else {
+                 row[0] = 1;
+                 row[new_row - 1] = 1;
+                 var temp = [];
+                 temp = pascals(new_row - 1);
+                 for (var i = 1; i < new_row - 1; i++) {
+                     row[i] = temp[i - 1] + temp[i];
+                 }
+             }
+            for (var i = 0; i < row.length; i++) {
+                document.write(row[i], " ");
+            }
+            document.write("<div>");
+            return row;
+        }
+
+
+
+</script>
+
+<script>
+    var new_row = prompt("prompt 윈도우에서의 메시지와 입력 값: 파스칼의 삼각형의 높이:", "")
+    pascals(new_row);
+
+</script>
+
+</html>
+
+
+
+
+
